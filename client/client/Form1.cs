@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Net.Sockets;
 using System.Drawing.Imaging;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Net;
 
 namespace client
 {
@@ -40,13 +41,96 @@ namespace client
 
         public Form1()
         {
-            InitializeComponent();
+            ReceiveBroadcast(82);
         }
+
+
+        private void ReceiveBroadcast(int port)
+        {
+            using (UdpClient udpClient = new UdpClient(port))
+            {
+                // Thiết lập để nhận broadcast từ bất kỳ địa chỉ IP nào
+                IPEndPoint endPoint = new IPEndPoint(IPAddress.Any, port);
+
+                Console.WriteLine($"Đang chờ nhận broadcast trên cổng {port}...");
+
+                try
+                {
+                    while (true)
+                    {
+                        // Nhận dữ liệu từ mạng
+                        byte[] receivedData = udpClient.Receive(ref endPoint);
+                        string receivedMessage = Encoding.UTF8.GetString(receivedData);
+
+                        // In ra thông tin nhận được
+                        if (this.InvokeRequired)
+                        {
+                            // If on a different thread, use Invoke to update the UI
+                            this.Invoke(new Action(() =>
+                            {
+                                MessageBox.Show($"Nhận được gói tin(client): {receivedMessage}");
+                                MessageBox.Show($"Từ địa chỉ IP(client): {endPoint.Address}, Cổng: {endPoint.Port}");
+
+                                // Parsing the received message to extract IP and Port
+                                string[] parts = receivedMessage.Split(new[] { ", " }, StringSplitOptions.None);
+                                string ipAddress = parts[0].Replace("IP: ", "");  // Extract IP
+                                string portString = parts[1].Replace("Port: ", "");  // Extract Port
+
+                               
+                            }));
+                        }
+
+
+                        string[] parts1 = receivedMessage.Split(new[] { ", " }, StringSplitOptions.None);
+                        string ipAddress1 = parts1[0].Replace("IP: ", "");  // Extract IP
+                        string portString1 = parts1[1].Replace("Port: ", "");  // Extract Port
+                        //MessageBox.Show($"Nhận được góiww tin(client): {ipAddress1}");
+                        //MessageBox.Show($"Nhận được góidddw tin(client): {portString1}");
+
+                        InitializeComponent();
+                        txtIP.Text = ipAddress1;
+                        
+
+
+                        portNumber = int.Parse(txtPort.Text);
+                        client.Connect(txtIP.Text, portNumber);
+                        timer1.Start();
+                        // Dừng vòng lặp sau khi nhận được gói tin
+                        break;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Lỗi khi nhận broadcast: " + ex.Message);
+                }
+            }
+        }
+
+
+        //private void Form1_Load(object sender, EventArgs e)
+        //{
+        //    btnShare.Enabled = false;
+        //}
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            btnShare.Enabled = false;
+            // Set up a Timer to delay hiding Form1
+            Timer timer = new Timer();
+            timer.Interval = 1; // Set delay in milliseconds (e.g., 1000 ms = 1 second)
+            timer.Tick += Timer_Tick;
+            timer.Start();
         }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            // Stop the timer to prevent repeated ticks
+            Timer timer = sender as Timer;
+            timer.Stop();
+
+            // Hide Form1 and show Form2
+            this.Hide();
+        }
+
 
         private void btnConnect_Click(object sender, EventArgs e)
         {

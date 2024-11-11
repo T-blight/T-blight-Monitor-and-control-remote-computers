@@ -16,3 +16,13 @@ E:\My Program\c#\desktop viewer\client\client\obj\Debug\client.csprojResolveAsse
 E:\My Program\c#\desktop viewer\client\client\obj\Debug\client.Form1.resources
 E:\My Program\c#\desktop viewer\client\client\obj\Debug\client.Properties.Resources.resources
 E:\My Program\c#\desktop viewer\client\client\obj\Debug\client.csproj.GenerateResource.Cache
+C:\Users\phanx\source\repos\remote-desktop-viewer43\client\client\bin\Debug\client.exe.config
+C:\Users\phanx\source\repos\remote-desktop-viewer43\client\client\bin\Debug\client.exe
+C:\Users\phanx\source\repos\remote-desktop-viewer43\client\client\bin\Debug\client.pdb
+C:\Users\phanx\source\repos\remote-desktop-viewer43\client\client\obj\Debug\client.csproj.AssemblyReference.cache
+C:\Users\phanx\source\repos\remote-desktop-viewer43\client\client\obj\Debug\client.Form1.resources
+C:\Users\phanx\source\repos\remote-desktop-viewer43\client\client\obj\Debug\client.Properties.Resources.resources
+C:\Users\phanx\source\repos\remote-desktop-viewer43\client\client\obj\Debug\client.csproj.GenerateResource.cache
+C:\Users\phanx\source\repos\remote-desktop-viewer43\client\client\obj\Debug\client.csproj.CoreCompileInputs.cache
+C:\Users\phanx\source\repos\remote-desktop-viewer43\client\client\obj\Debug\client.exe
+C:\Users\phanx\source\repos\remote-desktop-viewer43\client\client\obj\Debug\client.pdb
