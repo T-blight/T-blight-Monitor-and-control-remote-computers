@@ -29,3 +29,4 @@ C:\Users\phanx\Source\Repos\remote-desktop-viewer43\server\server\obj\Debug\serv
 C:\Users\phanx\Source\Repos\remote-desktop-viewer43\server\server\obj\Debug\server.csproj.CoreCompileInputs.cache
 C:\Users\phanx\Source\Repos\remote-desktop-viewer43\server\server\obj\Debug\server.exe
 C:\Users\phanx\Source\Repos\remote-desktop-viewer43\server\server\obj\Debug\server.pdb
+C:\Users\phanx\Source\Repos\remote-desktop-viewer43\server\server\obj\Debug\server.UserControl1.resources

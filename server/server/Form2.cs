@@ -22,7 +22,8 @@ namespace server
         private List<TcpClient> clients; // List to hold multiple clients
         private readonly Thread Listening;
         private readonly Dictionary<TcpClient, PictureBox> clientPictureMap; // Map clients to PictureBox controls
-
+        private UserControl1 userControl1;
+        private System.Windows.Forms.Timer updateTimer;
         public Form2(int Port)
         {
             port = Port;
@@ -31,9 +32,9 @@ namespace server
             clientPictureMap = new Dictionary<TcpClient, PictureBox>();
             Listening = new Thread(StartListening);
             InitializeComponent();
+            button2.Hide();
         }
 
-        // Start listening for incoming client connections
         private void StartListening()
         {
             server.Start();
@@ -49,7 +50,10 @@ namespace server
                 PictureBox assignedPictureBox = GetAvailablePictureBox();
                 if (assignedPictureBox != null)
                 {
-                    clientPictureMap[client] = assignedPictureBox; // Map client to PictureBox
+                    lock (clientPictureMap) // Ensure thread-safety when updating the dictionary
+                    {
+                        clientPictureMap[client] = assignedPictureBox; // Map client to PictureBox
+                    }
                 }
 
                 // Start a new thread to handle the client
@@ -57,6 +61,44 @@ namespace server
                 clientThread.Start();
             }
         }
+
+        private PictureBox GetAvailablePictureBox()
+        {
+            // Lock to ensure thread-safety when accessing shared resources
+            lock (clientPictureMap)
+            {
+                // Check for available PictureBoxes, returning the first available one
+                if (pictureBox1.Image == null && !clientPictureMap.Values.Contains(pictureBox1))
+                {
+                    return pictureBox1; // If pictureBox1 is free, return it
+                }
+                else if (pictureBox2.Image == null && !clientPictureMap.Values.Contains(pictureBox2))
+                {
+                    return pictureBox2; // If pictureBox2 is free, return it
+                }
+                else if (pictureBox3.Image == null && !clientPictureMap.Values.Contains(pictureBox3))
+                {
+                    return pictureBox3; // If pictureBox3 is free, return it
+                }
+                else if (pictureBox4.Image == null && !clientPictureMap.Values.Contains(pictureBox4))
+                {
+                    return pictureBox4; // If pictureBox4 is free, return it
+                }
+                else if (pictureBox5.Image == null && !clientPictureMap.Values.Contains(pictureBox5))
+                {
+                    return pictureBox5; // If pictureBox5 is free, return it
+                }
+                else if (pictureBox6.Image == null && !clientPictureMap.Values.Contains(pictureBox6))
+                {
+                    return pictureBox6; // If pictureBox6 is free, return it
+                }
+            }
+
+            // Add more conditions if you have more PictureBox controls
+            return null; // Return null if no PictureBox is available
+        }
+
+
 
         // Method to receive and display images from each client
         private void ReceiveImage(TcpClient client)
@@ -91,39 +133,6 @@ namespace server
                 clients.Remove(client);
             }
             client.Close(); // Close the client connection
-        }
-
-        // Find an available PictureBox to display an image
-        private PictureBox GetAvailablePictureBox()
-        {
-            // You can expand this to use more PictureBox controls, like pictureBox1, pictureBox2, etc.
-            if (pictureBox1.Image == null)
-            {
-                return pictureBox1; // If pictureBox2 is free, return it
-            }
-            else if (pictureBox2.Image == null)
-            {
-                return pictureBox2; // If pictureBox1 is free, return it
-            }
-            else if (pictureBox3.Image == null)
-            {
-                return pictureBox3; // If pictureBox1 is free, return it
-            }
-            else if (pictureBox4.Image == null)
-            {
-                return pictureBox4; // If pictureBox1 is free, return it
-            }
-            else if (pictureBox5.Image == null)
-            {
-                return pictureBox5; // If pictureBox1 is free, return it
-            }
-            else if (pictureBox6.Image == null)
-            {
-                return pictureBox6; // If pictureBox1 is free, return it
-            }
-
-            // Add more conditions if you have more PictureBox controls
-            return null; // Return null if no PictureBox is available
         }
 
         // Stops the server and closes all connections
@@ -269,19 +278,185 @@ namespace server
             BroadcastIPAddressAndPort(broadcastAddress, 82, message);
         }
 
+        private void UpdateDisplayImage(Image image)
+        {
+            if (button2.Visible)
+            {
+                userControl1.DisplayImage = image;
+            }
+            else
+            {
+                updateTimer.Stop();
+                MessageBox.Show("off");
+            }
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            // PictureBox click event (if needed)
+            tableLayoutPanel1.Hide();
+            userControl1 = new UserControl1
+            {
+                DisplayImage = pictureBox1.Image
+            };
+            splitContainer1.Panel2.Controls.Add(userControl1);
+            userControl1.Dock = DockStyle.Fill;
+            userControl1.BringToFront();
+            button2.Show();
+
+            if (updateTimer == null)
+            {
+                updateTimer = new System.Windows.Forms.Timer
+                {
+                    Interval = 10 // Update every second (adjust as needed)
+                };
+                updateTimer.Tick += (s, args) => UpdateDisplayImage(pictureBox1.Image);
+            }
+
+            updateTimer.Start();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            // Additional PictureBox click event (if needed)
+            tableLayoutPanel1.Hide();
+            userControl1 = new UserControl1
+            {
+                DisplayImage = pictureBox2.Image
+            };
+            splitContainer1.Panel2.Controls.Add(userControl1);
+            userControl1.Dock = DockStyle.Fill;
+            userControl1.BringToFront();
+            button2.Show();
+
+            if (updateTimer == null)
+            {
+                updateTimer = new System.Windows.Forms.Timer
+                {
+                    Interval = 10 // Update every second (adjust as needed)
+                };
+                updateTimer.Tick += (s, args) => UpdateDisplayImage(pictureBox2.Image);
+            }
+
+            updateTimer.Start();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
+            tableLayoutPanel1.Hide();
+            userControl1 = new UserControl1
+            {
+                DisplayImage = pictureBox3.Image
+            };
+            splitContainer1.Panel2.Controls.Add(userControl1);
+            userControl1.Dock = DockStyle.Fill;
+            userControl1.BringToFront();
+            button2.Show();
 
+            if (updateTimer == null)
+            {
+                updateTimer = new System.Windows.Forms.Timer
+                {
+                    Interval = 10 // Update every second (adjust as needed)
+                };
+                updateTimer.Tick += (s, args) => UpdateDisplayImage(pictureBox3.Image);
+            }
+
+            updateTimer.Start();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // Stop the timer if it's running
+            if (updateTimer != null)
+            {
+                updateTimer.Stop();
+                updateTimer.Dispose(); // Dispose of the timer when done
+                updateTimer = null; // Nullify the reference to prevent reuse
+            }
+
+            // Remove and dispose userControl1 if it's not null
+            if (userControl1 != null)
+            {
+                splitContainer1.Panel1.Controls.Remove(userControl1);
+                userControl1.Dispose();
+                userControl1 = null;
+            }
+
+            // Show the table layout panel again and hide button2
+            tableLayoutPanel1.Show();
+            button2.Hide();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            tableLayoutPanel1.Hide();
+            userControl1 = new UserControl1
+            {
+                DisplayImage = pictureBox4.Image
+            };
+            splitContainer1.Panel2.Controls.Add(userControl1);
+            userControl1.Dock = DockStyle.Fill;
+            userControl1.BringToFront();
+            button2.Show();
+
+            if (updateTimer == null)
+            {
+                updateTimer = new System.Windows.Forms.Timer
+                {
+                    Interval = 10 // Update every second (adjust as needed)
+                };
+                updateTimer.Tick += (s, args) => UpdateDisplayImage(pictureBox4.Image);
+            }
+
+            updateTimer.Start();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            tableLayoutPanel1.Hide();
+            userControl1 = new UserControl1
+            {
+                DisplayImage = pictureBox5.Image
+            };
+            splitContainer1.Panel2.Controls.Add(userControl1);
+            userControl1.Dock = DockStyle.Fill;
+            userControl1.BringToFront();
+            button2.Show();
+
+
+            if (updateTimer == null)
+            {
+                updateTimer = new System.Windows.Forms.Timer
+                {
+                    Interval = 10 // Update every second (adjust as needed)
+                };
+                updateTimer.Tick += (s, args) => UpdateDisplayImage(pictureBox5.Image);
+            }
+
+            updateTimer.Start();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            tableLayoutPanel1.Hide();
+            userControl1 = new UserControl1
+            {
+                DisplayImage = pictureBox6.Image
+            };
+            splitContainer1.Panel2.Controls.Add(userControl1);
+            userControl1.Dock = DockStyle.Fill;
+            userControl1.BringToFront();
+            button2.Show();
+
+            if (updateTimer == null)
+            {
+                updateTimer = new System.Windows.Forms.Timer
+                {
+                    Interval = 10 // Update every second (adjust as needed)
+                };
+                updateTimer.Tick += (s, args) => UpdateDisplayImage(pictureBox6.Image);
+            }
+
+            updateTimer.Start();
         }
     }
 }

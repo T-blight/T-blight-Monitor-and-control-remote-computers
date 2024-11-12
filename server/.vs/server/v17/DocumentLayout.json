@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\phanx\\source\\repos\\remote-desktop-viewer43\\server\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C51EF013-103C-4992-9545-2AA0651206D7}|server\\server.csproj|C:\\Users\\phanx\\source\\repos\\remote-desktop-viewer43\\server\\server\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C51EF013-103C-4992-9545-2AA0651206D7}|server\\server.csproj|solutionrelative:server\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C51EF013-103C-4992-9545-2AA0651206D7}|server\\server.csproj|c:\\users\\phanx\\source\\repos\\remote-desktop-viewer43\\server\\server\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C51EF013-103C-4992-9545-2AA0651206D7}|server\\server.csproj|solutionrelative:server\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C51EF013-103C-4992-9545-2AA0651206D7}|server\\server.csproj|C:\\Users\\phanx\\source\\repos\\remote-desktop-viewer43\\server\\server\\Form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C51EF013-103C-4992-9545-2AA0651206D7}|server\\server.csproj|solutionrelative:server\\Form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C51EF013-103C-4992-9545-2AA0651206D7}|server\\server.csproj|C:\\Users\\phanx\\source\\repos\\remote-desktop-viewer43\\server\\server\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C51EF013-103C-4992-9545-2AA0651206D7}|server\\server.csproj|solutionrelative:server\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C51EF013-103C-4992-9545-2AA0651206D7}|server\\server.csproj|C:\\Users\\phanx\\source\\repos\\remote-desktop-viewer43\\server\\server\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C51EF013-103C-4992-9545-2AA0651206D7}|server\\server.csproj|solutionrelative:server\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C51EF013-103C-4992-9545-2AA0651206D7}|server\\server.csproj|C:\\Users\\phanx\\source\\repos\\remote-desktop-viewer43\\server\\server\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C51EF013-103C-4992-9545-2AA0651206D7}|server\\server.csproj|solutionrelative:server\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C51EF013-103C-4992-9545-2AA0651206D7}|server\\server.csproj|C:\\Users\\phanx\\source\\repos\\remote-desktop-viewer43\\server\\server\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C51EF013-103C-4992-9545-2AA0651206D7}|server\\server.csproj|solutionrelative:server\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C51EF013-103C-4992-9545-2AA0651206D7}|server\\server.csproj|C:\\Users\\phanx\\source\\repos\\remote-desktop-viewer43\\server\\server\\usercontrol1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C51EF013-103C-4992-9545-2AA0651206D7}|server\\server.csproj|solutionrelative:server\\usercontrol1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C51EF013-103C-4992-9545-2AA0651206D7}|server\\server.csproj|C:\\Users\\phanx\\source\\repos\\remote-desktop-viewer43\\server\\server\\Form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C51EF013-103C-4992-9545-2AA0651206D7}|server\\server.csproj|solutionrelative:server\\Form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C51EF013-103C-4992-9545-2AA0651206D7}|server\\server.csproj|C:\\Users\\phanx\\source\\repos\\remote-desktop-viewer43\\server\\server\\Form1.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,11 +50,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\phanx\\source\\repos\\remote-desktop-viewer43\\server\\server\\Form1.cs",
               "RelativeDocumentMoniker": "server\\Form1.cs",
@@ -58,8 +70,42 @@
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserControl1.cs",
+              "DocumentMoniker": "C:\\Users\\phanx\\source\\repos\\remote-desktop-viewer43\\server\\server\\UserControl1.cs",
+              "RelativeDocumentMoniker": "server\\UserControl1.cs",
+              "ToolTip": "C:\\Users\\phanx\\source\\repos\\remote-desktop-viewer43\\server\\server\\UserControl1.cs",
+              "RelativeToolTip": "server\\UserControl1.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAnwBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T08:54:54.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserControl1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\phanx\\source\\repos\\remote-desktop-viewer43\\server\\server\\UserControl1.Designer.cs",
+              "RelativeDocumentMoniker": "server\\UserControl1.Designer.cs",
+              "ToolTip": "C:\\Users\\phanx\\source\\repos\\remote-desktop-viewer43\\server\\server\\UserControl1.Designer.cs",
+              "RelativeToolTip": "server\\UserControl1.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T05:15:24.223Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserControl1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\phanx\\source\\repos\\remote-desktop-viewer43\\server\\server\\UserControl1.cs",
+              "RelativeDocumentMoniker": "server\\UserControl1.cs",
+              "ToolTip": "C:\\Users\\phanx\\source\\repos\\remote-desktop-viewer43\\server\\server\\UserControl1.cs [Design]",
+              "RelativeToolTip": "server\\UserControl1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T05:14:37.359Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -71,11 +117,12 @@
               "RelativeToolTip": "server\\Program.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T14:30:06.102Z"
+              "WhenOpened": "2024-11-11T14:30:06.102Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\Users\\phanx\\source\\repos\\remote-desktop-viewer43\\server\\server\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "server\\Form1.Designer.cs",
@@ -87,7 +134,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\phanx\\source\\repos\\remote-desktop-viewer43\\server\\server\\Form1.cs",
               "RelativeDocumentMoniker": "server\\Form1.cs",
@@ -98,7 +145,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "Form2.Designer.cs",
               "DocumentMoniker": "C:\\Users\\phanx\\source\\repos\\remote-desktop-viewer43\\server\\server\\Form2.Designer.cs",
               "RelativeDocumentMoniker": "server\\Form2.Designer.cs",
@@ -111,20 +158,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Form2.cs",
               "DocumentMoniker": "C:\\Users\\phanx\\source\\repos\\remote-desktop-viewer43\\server\\server\\Form2.cs",
               "RelativeDocumentMoniker": "server\\Form2.cs",
               "ToolTip": "C:\\Users\\phanx\\source\\repos\\remote-desktop-viewer43\\server\\server\\Form2.cs",
               "RelativeToolTip": "server\\Form2.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAIwCkAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAYwGMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-10T10:26:27.892Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form2.cs [Design]",
               "DocumentMoniker": "C:\\Users\\phanx\\source\\repos\\remote-desktop-viewer43\\server\\server\\Form2.cs",
               "RelativeDocumentMoniker": "server\\Form2.cs",
