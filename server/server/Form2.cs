@@ -17,48 +17,46 @@ namespace server
 {
     public partial class Form2 : Form
     {
-        private readonly int port;
-        private TcpListener server;
-        private List<TcpClient> clients; // List to hold multiple clients
-        private readonly Thread Listening;
-        private readonly Dictionary<TcpClient, PictureBox> clientPictureMap; // Map clients to PictureBox controls
-        private UserControl1 userControl1;
-        private System.Windows.Forms.Timer updateTimer;
+        private readonly int port; // Cổng kết nối server
+        private TcpListener server; // Biến để khởi tạo server lắng nghe kết nối
+        private List<TcpClient> clients; // Danh sách lưu trữ các client
+        private readonly Thread Listening; // Luồng lắng nghe client mới
+        private readonly Dictionary<TcpClient, PictureBox> clientPictureMap; // Bản đồ ánh xạ client và PictureBox
+        private UserControl1 userControl1; // Đối tượng để quản lý hiển thị hình ảnh
+        private System.Windows.Forms.Timer updateTimer; // Timer để cập nhật ảnh hiển thị
         public Form2(int Port)
         {
-            port = Port;
-            server = new TcpListener(IPAddress.Any, port);
-            clients = new List<TcpClient>();
-            clientPictureMap = new Dictionary<TcpClient, PictureBox>();
-            Listening = new Thread(StartListening);
-            InitializeComponent();
-            button2.Hide();
+            port = Port; // Gán cổng truyền vào cho biến port
+            server = new TcpListener(IPAddress.Any, port); // Khởi tạo server lắng nghe trên tất cả các IP và cổng
+            clients = new List<TcpClient>(); // Khởi tạo danh sách client
+            clientPictureMap = new Dictionary<TcpClient, PictureBox>(); // Khởi tạo bản đồ ánh xạ client - PictureBox
+            Listening = new Thread(StartListening); // Tạo luồng mới để lắng nghe kết nối
+            InitializeComponent(); // Khởi tạo các thành phần giao diện
+            button2.Hide(); // Ẩn nút button2 khi khởi tạo form
         }
 
         private void StartListening()
         {
-            server.Start();
+            server.Start(); // Bắt đầu lắng nghe kết nối
             while (true)
             {
-                TcpClient client = server.AcceptTcpClient(); // Accept a new client connection
-                lock (clients) // Thread-safe access to the clients list
+                TcpClient client = server.AcceptTcpClient(); // Chấp nhận một kết nối client mới
+                lock (clients) // Đảm bảo an toàn luồng khi truy cập danh sách clients
                 {
-                    clients.Add(client); // Add to the list of clients
+                    clients.Add(client); // Thêm client vào danh sách
                 }
 
-                // Find an available PictureBox for the client
-                PictureBox assignedPictureBox = GetAvailablePictureBox();
+                PictureBox assignedPictureBox = GetAvailablePictureBox(); // Tìm PictureBox khả dụng cho client
                 if (assignedPictureBox != null)
                 {
-                    lock (clientPictureMap) // Ensure thread-safety when updating the dictionary
+                    lock (clientPictureMap) // Đảm bảo an toàn khi cập nhật clientPictureMap
                     {
-                        clientPictureMap[client] = assignedPictureBox; // Map client to PictureBox
+                        clientPictureMap[client] = assignedPictureBox; // Ánh xạ client với PictureBox
                     }
                 }
 
-                // Start a new thread to handle the client
-                Thread clientThread = new Thread(() => ReceiveImage(client));
-                clientThread.Start();
+                Thread clientThread = new Thread(() => ReceiveImage(client)); // Tạo luồng mới cho client
+                clientThread.Start(); // Bắt đầu luồng nhận hình ảnh từ client
             }
         }
 
