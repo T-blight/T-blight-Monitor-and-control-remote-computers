@@ -170,6 +170,18 @@ namespace client
         {
             SendDesktopImage();
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This software created by sojeb sikder. (c)SojebSoft");
+        }
+    }
+}
+
+        //
+        //
+        //
+        //
+        //
         // private void btnShare_Click(object sender, EventArgs e)
         // {
         //     if(btnShare.Text.StartsWith("Share"))
@@ -182,15 +194,27 @@ namespace client
         //         btnShare.Text = "Share My Screen";
         //     }
         // }
+        //
+        //
+        //
         // private void timer1_Tick(object sender, EventArgs e)
         // {
         //     SendDesktopImage();
         // }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("This software created by sojeb sikder. (c)SojebSoft");
-        }
-       
-    }
-}
+        //
+        //
+        //
+        // private void button1_Click(object sender, EventArgs e)
+        // {
+        //     MessageBox.Show("This software created by sojeb sikder. (c)SojebSoft");
+        // }
+        //
+        //
+        //
+        //
+        //
+        //
+    //     }
+// }
+//
+//
