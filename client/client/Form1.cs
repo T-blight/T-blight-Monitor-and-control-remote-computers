@@ -166,11 +166,26 @@ namespace client
                 btnShare.Text = "Share My Screen";
             }
         }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             SendDesktopImage();
         }
+        // private void btnShare_Click(object sender, EventArgs e)
+        // {
+        //     if(btnShare.Text.StartsWith("Share"))
+        //     {
+        //         timer1.Start();
+        //         btnShare.Text = "Stop Sharing";
+        //     }
+        //     else{
+        //         timer1.Stop();
+        //         btnShare.Text = "Share My Screen";
+        //     }
+        // }
+        // private void timer1_Tick(object sender, EventArgs e)
+        // {
+        //     SendDesktopImage();
+        // }
 
         private void button1_Click(object sender, EventArgs e)
         {
